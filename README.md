@@ -7,3 +7,8 @@ Describe: createRobogersArray()
 Test: Should return an array with length x+1 for input x
 Code: createRobogersArray(5)
 Expected result: (length:6) [...]
+
+Describe: createRobogersArray()
+Test: Should replace all numbers including 3 with "Won't you be my neighbor?"
+Code: createRobogersArray(3)
+Expected result: (length:4) [0, ... "Won't you be my neighbor?"]

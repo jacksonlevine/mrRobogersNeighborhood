@@ -14,7 +14,12 @@ function myOnSubmitHandler(event) {
 function createRobogersArray(number) {
   let array = []
   for(let i = 0; i < number+1; i++) {
-    array.push(i)
+    let numberString = "" + i
+    if(numberString.includes(3)) {
+      array.push("Won't you be my neighbor?")
+    } else {
+      array.push(i)
+    }
   }
   return array
 }
