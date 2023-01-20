@@ -1,3 +1,22 @@
+# Mr. Roboger's Neighborhood
+## A coding exercise to demonstrate the abilities of for loop incrementing.
+
+# Technologies Used:
+* Javascript
+* HTML
+* CSS
+
+# Known Bugs:
+* Some flickering/jittering when moving mouse quickly over the list elements
+
+# Contact Me:
+* jack@netbug.us for any coding inquiries
+
+## License:
+* Creative Commons 2.0
+
+## Tests:
+
 Describe: createRobogersArray()
   Test: Should return an array with just 0 from input 0
   Code: createRobogersArray(0)
@@ -68,3 +87,6 @@ Describe: robogersNumber()
   Test: Should return a single value of the "robogers array" based on number given
   Code: robogersNumber(3)
   Expected output: "Won't you be my neighbor?"
+
+  
+### Copyright Jackson Levine 2023
