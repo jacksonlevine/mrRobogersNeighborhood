@@ -17,6 +17,9 @@ function createRobogersArray(number) {
     let numberString = "" + i
     if(numberString.includes(3)) {
       array.push("Won't you be my neighbor?")
+    } else 
+    if(numberString.includes(2)){
+      array.push("Boop!")
     } else {
       array.push(i)
     }

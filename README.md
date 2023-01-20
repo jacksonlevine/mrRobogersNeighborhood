@@ -12,3 +12,8 @@ Describe: createRobogersArray()
 Test: Should replace all numbers including 3 with "Won't you be my neighbor?"
 Code: createRobogersArray(3)
 Expected result: (length:4) [0, ... "Won't you be my neighbor?"]
+
+Describe: createRobogersArray()
+Test: Should replace all numbers including 2 with "Boop!"
+Code: createRobogersArray(2)
+Expected result: (length:3) [0, ... "Boop!"]
