@@ -1,40 +1,22 @@
 //User Interface Logic
 window.onload = myOnLoadHandler
 
-let makeSubmitHandler = function(parent) {
-  return function myOnSubmitHandler(event) {
-    event.preventDefault()
-    let numInput = parseInt(parent.getElementById("numInput").value)
-    let nameInput = parent.getElementById("nameInput").value
-    let beepBoopArray = createRobogersArray(numInput, nameInput)
-    displayOutput(beepBoopArray, parent)
-  }
-}
-
 function myOnLoadHandler() {
   let myForm = document.querySelector("form")
-  myForm.onsubmit = makeSubmitHandler(document)
-  let myNewButton = document.getElementById("newButton")
-  myNewButton.onclick = generateNew
+  myForm.onsubmit = myOnSubmitHandler
 }
 
-function generateNew(event) {
+function myOnSubmitHandler(event) {
   event.preventDefault()
-  let mainBody = document.querySelector(".mainbody")
-  let newMainBody = mainBody.cloneNode(true)
-  mainBody.after(newMainBody)
-  reloadHandler(newMainBody)
+  let numInput = parseInt(document.getElementById("numInput").value)
+  let nameInput = document.getElementById("nameInput").value
+  let beepBoopArray = createRobogersArray(numInput, nameInput)
+  displayOutput(beepBoopArray)
 }
 
-function reloadHandler(parent) {
-  let myForm = parent.querySelector("form")
-  myForm.onsubmit = makeSubmitHandler(parent)
-}
-
-
-function displayOutput(array, parent) {
+function displayOutput(array) {
   let olFromArray = arrayToOL(array)
-  let outputSpot = parent.getElementById("output")
+  let outputSpot = document.getElementById("output")
   outputSpot.innerText = ""
   outputSpot.append(olFromArray)
 }
