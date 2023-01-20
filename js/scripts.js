@@ -1,5 +1,6 @@
-window.onload = myOnLoadHandler
 //User Interface Logic
+window.onload = myOnLoadHandler
+
 function myOnLoadHandler() {
   let myForm = document.querySelector("form")
   myForm.onsubmit = myOnSubmitHandler
