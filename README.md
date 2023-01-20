@@ -20,8 +20,12 @@ Describe: createRobogersArray()
   Expected output: (length:2) [0, "Beep!"]
 
   Test: Should include name of user if it was provided.
+  Code: createRobogersArray(3, "Test")
+  Expected output: (length:4) [0, "Beep!", "Boop!", "Won't you be my neighbor, Test?"]
+
+  Test: Should include no name if name not provided.
   Code: createRobogersArray(3)
-  Expected output: (length:4) [0, "Beep!", "Boop!", "Won't you be my neighbor, %USER%?"]
+  Expected output: (length:4) [0, "Beep!", "Boop!", "Won't you be my neighbor?"]
 
 Describe: arrayToUL()
 
