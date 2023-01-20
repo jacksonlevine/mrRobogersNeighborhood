@@ -4,6 +4,15 @@ body {
   flex-direction:column;
   align-items: center;
   font-family:monospace;
+  background-color: darkslateblue;
+}
+
+.mainbody {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background-color: antiquewhite;
+  width:70%;
 }
 
 input {
@@ -39,4 +48,42 @@ form {
   display: flex;
   flex-direction:column;
   align-items: center;
+}
+
+div#output {
+  background-color: aliceblue;
+  margin:5% 0;
+}
+
+div#output li {
+  animation: contractList 100ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+div#output li:hover {
+  animation: expandList 100ms ease-in-out;
+  animation-fill-mode: forwards;
+  font-weight:bold;
+  font-size:150%;
+  background-color: lavender;
+}
+
+@keyframes expandList{
+  from{
+    padding: 0 0;
+    line-height: 100%;
+  } to {
+    padding: 4% 0;
+    line-height: 150%;
+  }
+}
+
+@keyframes contractList{
+  from{
+    line-height: 150%;
+    padding: 4% 0;
+  } to {
+    padding: 0 0;
+    line-height: 100%;
+  }
 }

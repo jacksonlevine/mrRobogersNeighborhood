@@ -63,3 +63,8 @@ Describe: arrayToOL()
   Code: arrayToOL([])
   Expected output: null
 
+Describe: robogersNumber()
+
+  Test: Should return a single value of the "robogers array" based on number given
+  Code: robogersNumber(3)
+  Expected output: "Won't you be my neighbor?"

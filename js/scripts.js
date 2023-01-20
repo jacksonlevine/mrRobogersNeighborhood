@@ -25,25 +25,29 @@ function displayOutput(array) {
 function createRobogersArray(number, name) {
   let array = []
   for(let i = 0; i < number+1; i++) {
-    let numberString = "" + i
-    if(numberString.includes(3)) {
-      let line = "Won't you be my neighbor"
-      if(name != null && name != "") {
-        line += ", " + name
-      }
-      line += "?"
-      array.push(line)
-    } else 
-    if(numberString.includes(2)){
-      array.push("Boop!")
-    } else 
-    if(numberString.includes(1)) {
-      array.push("Beep!")
-    } else {
-      array.push(i)
-    }
+    array.push(robogersNumber(i, name))
   }
   return array
+}
+
+function robogersNumber(number, name) {
+  let numberString = "" + number
+  if(numberString.includes(3)) {
+    let line = "Won't you be my neighbor"
+    if(name != null && name != "") {
+      line += ", " + name
+    }
+    line += "?"
+    return line
+  } else 
+  if(numberString.includes(2)){
+    return "Boop!"
+  } else 
+  if(numberString.includes(1)) {
+    return "Beep!"
+  } else {
+    return number
+  }
 }
 
 function arrayToUL(array) {
