@@ -47,6 +47,9 @@ function createRobogersArray(number, name) {
 }
 
 function arrayToUL(array) {
+  if(array.length === 0) {
+    return null
+  }
   let ul = document.createElement("ul")
   array.forEach(
     function(element) {
@@ -59,6 +62,9 @@ function arrayToUL(array) {
 }
 
 function arrayToOL(array) {
+  if(array.length === 0) {
+    return null
+  }
   let ol = document.createElement("ol")
   array.forEach(
     function(element, index) {

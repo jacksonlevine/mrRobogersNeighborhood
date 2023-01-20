@@ -30,28 +30,36 @@ Describe: createRobogersArray()
 Describe: arrayToUL()
 
   Test: Should return an unordered list html element with same contents as the array, when given an array
-  Code: arrayToUL(["text", "text"]])
+  Code: arrayToUL(["text", "text"])
   Expected output: 
     <ul>
       <li>text</li>
       <li>text</li>
     </ul>
 
+  Test: Should return null if passed an empty array
+  Code: arrayToUL([])
+  Expected output: null
+
 Describe: arrayToOL()
 
   Test: Should return an ordered list html element with same contents as the array, when given an array
-  Code: arrayToOL(["text", "text"]])
+  Code: arrayToOL(["text", "text"])
   Expected output: 
     <ol>
-      <li>text</li>
-      <li>text</li>
+      <li value = "0">text</li>
+      <li value = "1">text</li>
     </ol>
 
   Test: Should start on index "0" to be lined up with the actual index of the array
-  Code: arrayToOL(["text", "text"]])
+  Code: arrayToOL(["text", "text"])
   Expected output: 
   <ol>
       <li value = "0">text</li>
       <li value = "1">text</li>
   </ol>
+
+  Test: Should return null if passed an empty array
+  Code: arrayToOL([])
+  Expected output: null
 
