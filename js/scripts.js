@@ -13,5 +13,8 @@ function myOnSubmitHandler(event) {
 
 function createRobogersArray(number) {
   let array = []
+  for(let i = 0; i < number+1; i++) {
+    array.push(i)
+  }
   return array
 }
