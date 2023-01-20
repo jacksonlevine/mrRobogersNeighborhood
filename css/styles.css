@@ -3,12 +3,40 @@ body {
   display:flex;
   flex-direction:column;
   align-items: center;
+  font-family:monospace;
 }
 
 input {
   transition:all 100ms ease-in-out;
+  width:110%;
 }
 
 input:hover {
   transform: scale(1.2);
+}
+
+h1 {
+  font-size:300%;
+  line-height:80%;
+}
+
+.bold {
+  font-weight:300%;
+}
+
+h2 {
+  font-size:100%;
+  line-height:1%;
+}
+
+.banner {
+  display:flex;
+  flex-direction:column;
+  align-items: flex-end;
+}
+
+form {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
 }
