@@ -37,3 +37,21 @@ Describe: arrayToUL()
       <li>text</li>
     </ul>
 
+Describe: arrayToOL()
+
+  Test: Should return an ordered list html element with same contents as the array, when given an array
+  Code: arrayToOL(["text", "text"]])
+  Expected output: 
+    <ol>
+      <li>text</li>
+      <li>text</li>
+    </ol>
+
+  Test: Should start on index "0" to be lined up with the actual index of the array
+  Code: arrayToOL(["text", "text"]])
+  Expected output: 
+  <ol>
+      <li value = "0">text</li>
+      <li value = "1">text</li>
+  </ol>
+

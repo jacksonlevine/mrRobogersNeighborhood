@@ -15,10 +15,10 @@ function myOnSubmitHandler(event) {
 }
 
 function displayOutput(array) {
-  let ulFromArray = arrayToUL(array)
+  let olFromArray = arrayToOL(array)
   let outputSpot = document.getElementById("output")
   outputSpot.innerText = ""
-  outputSpot.append(ulFromArray)
+  outputSpot.append(olFromArray)
 }
 
 //Business Logic
@@ -56,4 +56,17 @@ function arrayToUL(array) {
     }
   )
   return ul
+}
+
+function arrayToOL(array) {
+  let ol = document.createElement("ol")
+  array.forEach(
+    function(element, index) {
+      let li = document.createElement("li")
+      li.setAttribute("value", "" + index)
+      li.innerText = element
+      ol.append(li)
+    }
+  )
+  return ol
 }
