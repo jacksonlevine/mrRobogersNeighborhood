@@ -12,16 +12,6 @@
 # Contact Me:
 * jack@netbug.us for any coding inquiries
 
-## License:
-
-Copyright © 2023 Jackson Levine
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ## Tests:
 
 Describe: createRobogersArray()
@@ -82,62 +72,6 @@ Describe: createRobogersArray()
 
   ---
 
-Describe: arrayToUL()
-
-  Test: Should return an unordered list html element with same contents as the array, when given an array
-
-  Code: arrayToUL(["text", "text"])
-
-  Expected output: 
-    <ul>
-      <li>text</li>
-      <li>text</li>
-    </ul>
-
-  ---
-
-  Test: Should return null if passed an empty array
-
-  Code: arrayToUL([])
-
-  Expected output: null
-
-  ---
-
-Describe: arrayToOL()
-
-  Test: Should return an ordered list html element with same contents as the array, when given an array
-
-  Code: arrayToOL(["text", "text"])
-
-  Expected output: 
-    <ol>
-      <li value = "0">text</li>
-      <li value = "1">text</li>
-    </ol>
-
-  ---
-
-  Test: Should start on index "0" to be lined up with the actual index of the array
-
-  Code: arrayToOL(["text", "text"])
-
-  Expected output: 
-  <ol>
-      <li value = "0">text</li>
-      <li value = "1">text</li>
-  </ol>
-
-  ---
-
-  Test: Should return null if passed an empty array
-
-  Code: arrayToOL([])
-
-  Expected output: null
-
-  ---
-
 Describe: robogersNumber()
 
   Test: Should return a single value of the "robogers array" based on number given
@@ -149,4 +83,12 @@ Describe: robogersNumber()
   ---
 
   
-### Copyright Jackson Levine 2023
+## License:
+
+Copyright © 2023 Jackson Levine
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
