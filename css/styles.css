@@ -5,6 +5,7 @@ body {
   align-items: center;
   font-family:monospace;
   background-color: darkslateblue;
+  user-select: none;
 }
 
 .mainbody {

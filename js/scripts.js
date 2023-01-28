@@ -11,19 +11,19 @@ window.onload = function() {
 
 function logKey(event) {
   if(event.key === "w") {
-    userY++;
+    userY+=userSpeed;
     displayRobogersMatrix(42, currentType);
   }
   if(event.key === "a") {
-    userX--;
+    userX-=userSpeed;
     displayRobogersMatrix(42, currentType);
   }
   if(event.key === "s") {
-    userY--;
+    userY-=userSpeed;
     displayRobogersMatrix(42, currentType);
   }
   if(event.key === "d") {
-    userX++;
+    userX+=userSpeed;
     displayRobogersMatrix(42, currentType);
   }
 }
@@ -32,10 +32,16 @@ function receiveMatrixControls(event) {
   if(event.target.id === "plus" || event.target.id === "times" || event.target.id === "divide") {
     displayRobogersMatrix(42, event.target.id);
   }
+  if(event.target.id === "userSpeed") {
+    console.log("Test");
+    userSpeed = document.getElementById("userSpeed").value;
+    document.getElementById("speedNumber").innerText = userSpeed;
+  }
 }
 
 let userY = 0;
 let userX = 0;
+let userSpeed = 1;
 let currentType = "times";
 
 function displayRobogersMatrix(width, type) {
