@@ -50,21 +50,6 @@ function robogersNumber(number, name) {
   }
 }
 
-function arrayToUL(array) {
-  if(array.length === 0) {
-    return null
-  }
-  let ul = document.createElement("ul")
-  array.forEach(
-    function(element) {
-      let li = document.createElement("li")
-      li.innerText = element
-      ul.append(li)
-    }
-  )
-  return ul
-}
-
 function arrayToOL(array) {
   if(array.length === 0) {
     return null
