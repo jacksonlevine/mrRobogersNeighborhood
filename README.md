@@ -6,6 +6,12 @@
 * HTML
 * CSS
 
+# Installation / Setup:
+1. Clone this repository.
+2. Navigate to the top folder.
+3. Launch index.html in any web browser!
+* Alternatively, you can visit https://jacksonlevine.github.io/mrRobogersNeighborhood to see it on GitHub Pages.
+
 # Known Bugs:
 * Some flickering/jittering when moving mouse quickly over the list elements
 
