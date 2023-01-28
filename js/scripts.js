@@ -1,16 +1,34 @@
 //User Interface Logic
 window.onload = function() {
-  displayRobogersMatrix(42);
+  displayRobogersMatrix(42, "times");
   let myForm = document.querySelector("form")
   myForm.onsubmit = myOnSubmitHandler
+  let matrixControls = document.getElementById("matrixControls");
+  matrixControls.addEventListener("click", receiveMatrixControls)
 }
 
-function displayRobogersMatrix(width) {
+function receiveMatrixControls(event) {
+  if(event.target.id === "plus" || event.target.id === "times" || event.target.id === "divide") {
+    displayRobogersMatrix(42, event.target.id);
+  }
+}
+
+function displayRobogersMatrix(width, type) {
   let matrixSpot = document.getElementById("matrix");
   let string = "";
   for(let j = width; j > 0; j--) {
     for(let i = 0; i < width; i++) {
-      let number = i / j;
+      let number = 0;
+      if(type === "plus") {
+        number = i + j;
+      }
+      if(type === "times") {
+        number = i * j;
+      }
+      if(type === "divide") {
+        number = i / j;
+      }
+      
       let numberString = "" + number;
       if(numberString.includes(3)) {
         string += "<span class=\"red\">@</span>";
