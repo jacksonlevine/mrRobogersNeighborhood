@@ -95,3 +95,13 @@ div#output li:hover {
     line-height: 100%;
   }
 }
+
+.red {
+  color:red;
+}
+.blue {
+  color:blue;
+}
+.purple {
+  color:purple;
+}

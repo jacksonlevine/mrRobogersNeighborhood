@@ -10,23 +10,23 @@ function displayRobogersMatrix(width) {
   let string = "";
   for(let j = width; j > 0; j--) {
     for(let i = 0; i < width; i++) {
-      let number = i + j;
+      let number = i / j;
       let numberString = "" + number;
       if(numberString.includes(3)) {
-        string += "@"
+        string += "<span class=\"red\">@</span>";
       } else 
       if(numberString.includes(2)) {
-        string += "O"
+        string += "<span class=\"blue\">#</span>";
       } else 
       if(numberString.includes(1)) {
-        string += "b"
+        string += "<span class=\"purple\">+</span>";
       } else {
-        string += "N";
+        string += ".";
       }
     }
     string += "\n";
   }
-  matrixSpot.innerText = string;
+  matrixSpot.innerHTML = string;
 }
 
 function myOnSubmitHandler(event) {
