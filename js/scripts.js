@@ -5,6 +5,27 @@ window.onload = function() {
   myForm.onsubmit = myOnSubmitHandler
   let matrixControls = document.getElementById("matrixControls");
   matrixControls.addEventListener("click", receiveMatrixControls)
+  window.addEventListener('keypress', logKey);
+
+}
+
+function logKey(event) {
+  if(event.key === "w") {
+    userY++;
+    displayRobogersMatrix(42, currentType);
+  }
+  if(event.key === "a") {
+    userX--;
+    displayRobogersMatrix(42, currentType);
+  }
+  if(event.key === "s") {
+    userY--;
+    displayRobogersMatrix(42, currentType);
+  }
+  if(event.key === "d") {
+    userX++;
+    displayRobogersMatrix(42, currentType);
+  }
 }
 
 function receiveMatrixControls(event) {
@@ -13,20 +34,27 @@ function receiveMatrixControls(event) {
   }
 }
 
+let userY = 0;
+let userX = 0;
+let currentType = "times";
+
 function displayRobogersMatrix(width, type) {
   let matrixSpot = document.getElementById("matrix");
   let string = "";
-  for(let j = width; j > 0; j--) {
-    for(let i = 0; i < width; i++) {
+  for(let j = width + userY; j > 0+userY; j--) {
+    for(let i = 0+userX; i < width+userX; i++) {
       let number = 0;
       if(type === "plus") {
         number = i + j;
+        currentType = type;
       }
       if(type === "times") {
         number = i * j;
+        currentType = type;
       }
       if(type === "divide") {
         number = i / j;
+        currentType = type;
       }
       
       let numberString = "" + number;
