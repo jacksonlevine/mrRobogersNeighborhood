@@ -1,9 +1,32 @@
 //User Interface Logic
-window.onload = myOnLoadHandler
-
-function myOnLoadHandler() {
+window.onload = function() {
+  displayRobogersMatrix(42);
   let myForm = document.querySelector("form")
   myForm.onsubmit = myOnSubmitHandler
+}
+
+function displayRobogersMatrix(width) {
+  let matrixSpot = document.getElementById("matrix");
+  let string = "";
+  for(let j = width; j > 0; j--) {
+    for(let i = 0; i < width; i++) {
+      let number = i + j;
+      let numberString = "" + number;
+      if(numberString.includes(3)) {
+        string += "@"
+      } else 
+      if(numberString.includes(2)) {
+        string += "O"
+      } else 
+      if(numberString.includes(1)) {
+        string += "b"
+      } else {
+        string += "N";
+      }
+    }
+    string += "\n";
+  }
+  matrixSpot.innerText = string;
 }
 
 function myOnSubmitHandler(event) {
@@ -19,6 +42,22 @@ function displayOutput(array) {
   let outputSpot = document.getElementById("output")
   outputSpot.innerText = ""
   outputSpot.append(olFromArray)
+}
+
+function arrayToOL(array) {
+  if(array.length === 0) {
+    return null
+  }
+  let ol = document.createElement("ol")
+  array.forEach(
+    function(element, index) {
+      let li = document.createElement("li")
+      li.setAttribute("value", "" + index)
+      li.innerText = element
+      ol.append(li)
+    }
+  )
+  return ol
 }
 
 //Business Logic
@@ -48,20 +87,4 @@ function robogersNumber(number, name) {
   } else {
     return number
   }
-}
-
-function arrayToOL(array) {
-  if(array.length === 0) {
-    return null
-  }
-  let ol = document.createElement("ol")
-  array.forEach(
-    function(element, index) {
-      let li = document.createElement("li")
-      li.setAttribute("value", "" + index)
-      li.innerText = element
-      ol.append(li)
-    }
-  )
-  return ol
 }

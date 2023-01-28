@@ -60,6 +60,13 @@ div#output li {
   animation-fill-mode: forwards;
 }
 
+div#matrix {
+  font-family: monospace;
+  white-space: pre;
+  font-weight:bold;
+  letter-spacing: 10px;
+}
+
 div#output li:hover {
   animation: expandList 100ms ease-in-out;
   animation-fill-mode: forwards;
