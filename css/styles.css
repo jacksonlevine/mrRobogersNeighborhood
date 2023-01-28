@@ -6,6 +6,11 @@ body {
   font-family:monospace;
   background-color: darkslateblue;
   user-select: none;
+  font-size:80%;
+}
+
+.slider {
+  max-width: 100px;
 }
 
 .mainbody {

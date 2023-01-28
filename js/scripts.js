@@ -1,6 +1,12 @@
 //User Interface Logic
+let userY = 0;
+let userX = 0;
+let userSpeed = 1;
+let userWidth = 27;
+let currentType = "times";
+
 window.onload = function() {
-  displayRobogersMatrix(42, "times");
+  displayRobogersMatrix(userWidth, "times");
   let myForm = document.querySelector("form")
   myForm.onsubmit = myOnSubmitHandler
   let matrixControls = document.getElementById("matrixControls");
@@ -10,39 +16,39 @@ window.onload = function() {
 }
 
 function logKey(event) {
-  if(event.key === "w") {
-    userY+=userSpeed;
-    displayRobogersMatrix(42, currentType);
-  }
-  if(event.key === "a") {
-    userX-=userSpeed;
-    displayRobogersMatrix(42, currentType);
-  }
-  if(event.key === "s") {
-    userY-=userSpeed;
-    displayRobogersMatrix(42, currentType);
-  }
-  if(event.key === "d") {
-    userX+=userSpeed;
-    displayRobogersMatrix(42, currentType);
+  if(document.activeElement !== document.getElementById("numInput") && document.activeElement !== document.getElementById("nameInput")) {
+    if(event.key === "w") {
+      userY+=userSpeed;
+      displayRobogersMatrix(userWidth, currentType);
+    }
+    if(event.key === "a") {
+      userX-=userSpeed;
+      displayRobogersMatrix(userWidth, currentType);
+    }
+    if(event.key === "s") {
+      userY-=userSpeed;
+      displayRobogersMatrix(userWidth, currentType);
+    }
+    if(event.key === "d") {
+      userX+=userSpeed;
+      displayRobogersMatrix(userWidth, currentType);
+    }
   }
 }
 
 function receiveMatrixControls(event) {
   if(event.target.id === "plus" || event.target.id === "times" || event.target.id === "divide") {
-    displayRobogersMatrix(42, event.target.id);
+    displayRobogersMatrix(userWidth, event.target.id);
   }
   if(event.target.id === "userSpeed") {
-    console.log("Test");
-    userSpeed = document.getElementById("userSpeed").value;
+    userSpeed = parseInt(document.getElementById("userSpeed").value);
     document.getElementById("speedNumber").innerText = userSpeed;
   }
+  if(event.target.id === "screenSize") {
+    userWidth = parseInt(document.getElementById("screenSize").value);
+    displayRobogersMatrix(userWidth, currentType);
+  }
 }
-
-let userY = 0;
-let userX = 0;
-let userSpeed = 1;
-let currentType = "times";
 
 function displayRobogersMatrix(width, type) {
   let matrixSpot = document.getElementById("matrix");
